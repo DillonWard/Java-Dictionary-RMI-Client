@@ -5,25 +5,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Dictionary Service</title>
-
 <body>
-<h1>Dictionary Service</h1>
+	<h1>Dictionary Service</h1>
 
-	<form action="add_word" method="post">
-
-		<input name="wordInput" type="text"
-			value=<%=request.getParameter("wordInput")%>> <br> <input
-			type="submit" value="Submit"> <br>
-
-		<%
-			String word = request.getParameter("wordInput");
-			out.println(word);
-		%>
-		 
-
+	<form action="response.jsp" method="post">
+		<input name="wordInput" type="text"> 	 <input type="submit" value="Enter Query">
 	</form>
-
-
 
 </body>
 </html>

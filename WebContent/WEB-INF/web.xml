@@ -11,13 +11,13 @@
   </welcome-file-list>
   
   <servlet>
-    <servlet-name>Content</servlet-name>
+    <servlet-name>index</servlet-name>
     <servlet-class>ie.gmit.sw.ContentServlet</servlet-class>
   </servlet>
   
   <servlet-mapping>
-    <servlet-name>Content</servlet-name>
+    <servlet-name>index</servlet-name>
     <url-pattern></url-pattern>
   </servlet-mapping>
-  
+   
 </web-app>

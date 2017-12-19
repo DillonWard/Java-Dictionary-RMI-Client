@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet("/add_word")
+@WebServlet("/response")
 public class ContentServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
@@ -17,24 +17,15 @@ public class ContentServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//wordInput = request.getParameter("wordInput");
+		wordInput = request.getParameter("wordInput");
 
         try{
-        	System.out.println(request.getParameter("wordInput"));
+        	System.out.println(wordInput);
         }catch (Exception e) {
         	System.out.println("Failed.");
 		}
 				
         
 	}
-
-	/*
-	@Override
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		request.getSession().setAttribute("SUBFAMILY", wordInput);
-		request.getRequestDispatcher("Content.jsp").forward(request, response);
-	}
-	*/
 
 }
