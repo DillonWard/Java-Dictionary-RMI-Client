@@ -17,8 +17,9 @@ public class ContentServlet extends HttpServlet {
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		wordInput = request.getParameter("wordInput");
-
+		
         try{
         	System.out.println(wordInput);
         }catch (Exception e) {
