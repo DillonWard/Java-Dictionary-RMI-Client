@@ -9,12 +9,15 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  
   <servlet>
-    <servlet-name>Input</servlet-name>
-    <servlet-class>ie.gmit.sw.Input</servlet-class>
+    <servlet-name>Content</servlet-name>
+    <servlet-class>ie.gmit.sw.ContentServlet</servlet-class>
   </servlet>
+  
   <servlet-mapping>
-    <servlet-name>Input</servlet-name>
-    <url-pattern>/myservlet</url-pattern>
+    <servlet-name>Content</servlet-name>
+    <url-pattern></url-pattern>
   </servlet-mapping>
+  
 </web-app>

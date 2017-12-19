@@ -6,26 +6,24 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Dictionary Service</title>
 
+<body>
 <h1>Dictionary Service</h1>
 
-<body>
-
-	<form action="Content.jsp"
-		method="get">
+	<form action="add_word" method="post">
 
 		<input name="wordInput" type="text"
 			value=<%=request.getParameter("wordInput")%>> <br> <input
 			type="submit" value="Submit"> <br>
-			
+
 		<%
 			String word = request.getParameter("wordInput");
 			out.println(word);
 		%>
- 
- 
+		 
+
 	</form>
-	
-	
+
+
 
 </body>
 </html>
