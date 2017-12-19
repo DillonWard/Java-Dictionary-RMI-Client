@@ -6,10 +6,10 @@ import java.util.HashMap;
 
 public class ReadFile {
 	
-	String csvFile = "/data/dictionary.csv";
+	String txtFile = "C:\\Users\\dillo\\neonWorkspace\\RMI-Dictionary-Service-Implementation\\dictionary.txt";
 	BufferedReader br = null;
 	String line = "";
-	String cvsSplitBy = ",";
+	String cvsSplitBy = ":";
 	String[] dict;
 	HashMap<String, String> map = new HashMap<String, String>();
 
@@ -20,7 +20,7 @@ public class ReadFile {
 	
 	public void checkFile() throws Exception{
 
-		br = new BufferedReader(new FileReader(csvFile));
+		br = new BufferedReader(new FileReader(txtFile));
 		System.out.println("CHECKFILE");
 
 		while ((line = br.readLine()) != null) {
@@ -30,5 +30,4 @@ public class ReadFile {
 			map.put(dict[0], dict[1]);
 		}
 	}
-
 }

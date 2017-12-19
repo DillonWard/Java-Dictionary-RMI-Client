@@ -7,10 +7,10 @@ public class Worker {
 	private String definition;
 	
 	public void checkList(String word) throws Exception{
-		
+		System.out.println("HERE");
+
 		rf.checkFile();
 		
-		System.out.println("Checking.");
 		
 		if(rf.map.containsKey(word)){
 			setDefinition(rf.map.get(word));
@@ -20,7 +20,6 @@ public class Worker {
 			System.out.println("no");
 		}	
 		
-		System.out.println("Checked.");
 	}
 	
 	

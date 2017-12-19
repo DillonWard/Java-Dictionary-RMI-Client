@@ -34,7 +34,9 @@ public class ContentServlet extends HttpServlet {
 	
 	public void check(String s) throws Exception{
 		
-		w.checkList(s);			
+		System.out.println("HERE");
+		w.checkList(s);		
+		
 
 	}
 
