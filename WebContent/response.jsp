@@ -10,8 +10,10 @@
 	<h1>Dictionary Service</h1>
 	
 	
-		Checking definition for <%	String word = request.getParameter("wordInput");
-			out.println(word);%>
+	
+	
+		<%	String definition = request.getParameter("definition");
+			out.println(definition);%>
 
 </body>
 </html>
