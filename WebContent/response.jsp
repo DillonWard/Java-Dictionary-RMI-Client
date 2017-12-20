@@ -9,11 +9,6 @@
 <body>
 	<h1>Dictionary Service</h1>
 	
-	
-	
-	
-		<%	String definition = request.getParameter("definition");
-			out.println(definition);%>
 
 </body>
 </html>

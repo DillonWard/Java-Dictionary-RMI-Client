@@ -8,13 +8,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/response.jsp")
+@WebServlet("/response")
 public class ContentServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
 	private String wordInput;
-	//private String definition;
-	Worker w = new Worker();
 
 	
 	@Override
@@ -23,21 +21,5 @@ public class ContentServlet extends HttpServlet {
 
         	System.out.println(wordInput);
         	
-        	try {
-				check(wordInput);
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-
 	}
-	
-	public void check(String s) throws Exception{
-		
-		System.out.println("HERE");
-		w.checkList(s);		
-		
-
-	}
-
 }
