@@ -8,8 +8,9 @@
 <body>
 	<h1>Dictionary Service</h1>
 
-	<form action="response.jsp" method="post">
-		<input name="wordInput" type="text" placeholder="Enter word"> 	 <input type="submit" value="Enter Query">
+	<form action="Dictionary" method="post">
+		<input name="wordInput" type="text" placeholder="Enter word">
+		<input type="submit" value="Enter Query">
 	</form>
 
 </body>

@@ -6,14 +6,16 @@ import java.util.Queue;
 public class InQueue implements Runnable{
 
 	private Queue<String> queue;
-	private Worker worker;
+	private Runner worker;
 	
 	public InQueue(String word) {
 		
-		worker = new Worker();
+		worker = new Runner();
 		queue = new LinkedList<>();
 		queue.add(word);
 	}
+	
+	/*
 
 	public void pollQueue(){
 		
@@ -32,11 +34,11 @@ public class InQueue implements Runnable{
 			System.out.println(e);
 		}
 	}
-	
+	*/
 	
 	@Override
 	public void run() {
-		pollQueue();
+		//pollQueue();
 	}
 	
 
