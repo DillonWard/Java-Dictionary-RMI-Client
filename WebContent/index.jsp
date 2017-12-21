@@ -8,10 +8,12 @@
 <body>
 	<h1>Dictionary Service</h1>
 
-	<form action="Dictionary" method="post">
+	<form action="ContentServlet" method="post">
 		<input name="wordInput" type="text" placeholder="Enter word">
 		<input type="submit" value="Enter Query">
 	</form>
+
+	<form action="ContentServlet" method="get"></form>
 
 </body>
 </html>
