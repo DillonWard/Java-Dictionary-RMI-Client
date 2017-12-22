@@ -16,5 +16,6 @@ public class DictionaryServer {
 		DictionaryService dictionaryService = new DictionaryServiceImpl(file); // pass in the name of the file
 		LocateRegistry.createRegistry(1099); // RMI registry uses port 1099 in its process
 		Naming.rebind("dictionary", dictionaryService); // binds a name to the dictionaryService so it can be used in the 'lookup' service
+		System.out.println("Server Ready.");
 	}
 }
