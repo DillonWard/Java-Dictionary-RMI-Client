@@ -49,6 +49,6 @@ public class DictionaryServiceImpl extends UnicastRemoteObject implements Dictio
 			res = "No word found.";
 		}
 		
-		return res;
+		return res.toLowerCase();
 	}
 }

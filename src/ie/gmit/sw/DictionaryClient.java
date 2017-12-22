@@ -1,15 +1,34 @@
 package ie.gmit.sw;
 
-import java.io.IOException;
 import java.rmi.Naming;
-import java.rmi.registry.LocateRegistry;
+import java.util.LinkedList;
+import java.util.Queue;
 
-public class DictionaryClient {
+public class DictionaryClient implements Runnable {
 
-	public static void main(String[] args) throws IOException {
-		DictionaryService stub = new DictionaryServiceImpl("dictionary.txt"); 
-		LocateRegistry.createRegistry(1099);
-		Naming.rebind("dictionary", stub);
+	private String res;
+	private Queue<String> requestQueue = new LinkedList<>();;
+	private Queue<String> responseQueue = new LinkedList<>();;
+
+	public void run() {
+		try {
+
+			if (requestQueue.peek() != null) {
+				DictionaryService dict = (DictionaryService) Naming.lookup("//localhost/dictionary");
+				this.res = dict.checkWord(requestQueue.poll());
+				responseQueue.add(res);
+			} else {
+				System.out.println("DictionaryClient queue empty");
+			}
+		} catch (Exception e) {
+			System.out.println("DictionaryClient exception: " + e);
+		}
 
 	}
+
+	public void addQueue(String str) {
+		requestQueue.add(str);
+		run();
+	}
+
 }

@@ -1,15 +1,17 @@
 package ie.gmit.sw;
 
+import java.io.IOException;
 import java.rmi.Naming;
+import java.rmi.registry.LocateRegistry;
 
 public class DictionaryServer {
 
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) throws IOException {
+		String file = "dictionary.txt";
 
-		if(args.length < 0){
-			System.exit(1);
-		}
-		
-		DictionaryService dict = (DictionaryService)Naming.lookup("//localhost/dictionary");
+		DictionaryService dictionaryService = new DictionaryServiceImpl(file); 
+		LocateRegistry.createRegistry(1099);
+		Naming.rebind("dictionary", dictionaryService);
+
 	}
 }
