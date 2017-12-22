@@ -6,6 +6,7 @@ import java.rmi.RemoteException;
 
 public interface DictionaryService extends Remote{
 
+	// remote interface
 	public String checkWord(String word) throws RemoteException, IOException;
 	
 }
