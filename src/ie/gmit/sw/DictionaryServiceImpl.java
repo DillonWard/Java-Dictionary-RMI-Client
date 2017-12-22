@@ -48,8 +48,6 @@ public class DictionaryServiceImpl extends UnicastRemoteObject implements Dictio
 		InputStream in = getClass().getResourceAsStream(txtFile);
 		br = new BufferedReader(new InputStreamReader(in));
 
-		//br = new BufferedReader(new FileReader(txtFile));
-
 		// reads the entire file OR while the file isn't empty continue reading
 		while ((line = br.readLine()) != null) {
 
@@ -59,6 +57,5 @@ public class DictionaryServiceImpl extends UnicastRemoteObject implements Dictio
 
 		}	
 		
-		System.out.println(map+"!");
 	}
 }
