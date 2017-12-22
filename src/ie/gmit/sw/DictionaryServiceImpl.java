@@ -14,7 +14,7 @@ public class DictionaryServiceImpl extends UnicastRemoteObject implements Dictio
 	private String txtFile;
 	private BufferedReader br = null;
 	private String line = "";
-	private String cvsSplitBy = ":";
+	private String split = ":";
 	private String[] dict;
 	
 	HashMap<String, String> map = new HashMap<String, String>();
@@ -23,14 +23,14 @@ public class DictionaryServiceImpl extends UnicastRemoteObject implements Dictio
 		txtFile = file;
 	}
 	
-	public void readIn() throws IOException{
+	public void readFile() throws IOException{
 
 		br = new BufferedReader(new FileReader(txtFile));
 
 		while ((line = br.readLine()) != null) {
 
 			// use comma as separator
-			dict = line.split(cvsSplitBy);
+			dict = line.split(split);
 			map.put(dict[0].toLowerCase(), dict[1].toLowerCase());
 		}
 		
@@ -41,7 +41,7 @@ public class DictionaryServiceImpl extends UnicastRemoteObject implements Dictio
 
 		String res = "";
 		
-		readIn();
+		readFile();
 		if(map.containsKey(word)){
 			
 			res =  map.get(word);
