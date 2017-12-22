@@ -13,6 +13,7 @@
 		<input type="submit" value="Enter Query">
 	</form>
 
+
 	<form action="ContentServlet" method="get">
 		<%=request.getParameter("definition")%>
 	</form>

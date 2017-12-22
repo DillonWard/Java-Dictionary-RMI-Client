@@ -1,8 +1,9 @@
 package ie.gmit.sw;
 
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.rmi.RemoteException;
 import java.rmi.server.*;
 import java.util.HashMap;
@@ -44,16 +45,20 @@ public class DictionaryServiceImpl extends UnicastRemoteObject implements Dictio
 
 	// Read in a file and split the data into a map (1)
 	public void readFile() throws IOException{
+		InputStream in = getClass().getResourceAsStream(txtFile);
+		br = new BufferedReader(new InputStreamReader(in));
 
-		br = new BufferedReader(new FileReader(txtFile));
+		//br = new BufferedReader(new FileReader(txtFile));
 
 		// reads the entire file OR while the file isn't empty continue reading
 		while ((line = br.readLine()) != null) {
 
 			dict = line.split(split); // 'split' is what is used to divide the data read in 'Key: Value'
 			map.put(dict[0].toLowerCase(), dict[1].toLowerCase()); // the data read in is put into a map in lower case for when comparing
-		}
+			
+
+		}	
 		
-		System.out.println(map);
+		System.out.println(map+"!");
 	}
 }

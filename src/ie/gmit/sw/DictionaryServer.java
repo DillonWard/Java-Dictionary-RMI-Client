@@ -9,7 +9,7 @@ import java.rmi.registry.LocateRegistry;
 public class DictionaryServer {
 
 	public static void main(String[] args) throws IOException {
-		String file = "dictionary.txt"; // name of the file to be read in - can be changed to read in a new file
+		String file = "/dictionary.txt"; // name of the file to be read in - can be changed to read in a new file
 
 		// creates an instance of the remote object implementation (1)
 		// the remote object is exported and is bound to the RMI registry
